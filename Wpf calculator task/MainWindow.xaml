@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Wpf_calculator_task"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="590" Width="305">
+        Title="Samsung calculator" Height="590" Width="305">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -67,24 +67,33 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="4.2*"/>
+            <RowDefinition Height="4.1*"/>
         </Grid.RowDefinitions>
         <Canvas Background="black">
             <TextBox
+                Name="Resulttxtb"
+                TextAlignment="Right"
+                FontSize="25"
+                Foreground="#302D2D"
                 Margin="10, 10, 10, 10"
-                Background="gray"
-                Height="110"
+                Background="Black"
+                Padding="0,45, 10, 0"
+                Height="80"
                 Width="270"
+                BorderThickness="0" 
+                Canvas.Top="40"
                 >
             </TextBox>
             <Button Style="{DynamicResource ButtonStyle1}"
-                Width="60"
-                Height="60"
-                Canvas.Left="220"
-                Canvas.Top="125"
+                Name="ClearOne"
+                Width="40"
+                Height="40"
+                Canvas.Left="230"
+                Canvas.Top="135"
                 Background="Transparent"
                 BorderThickness="0"
                 FontSize="22"
+                Click="ClearOne_Click"
                 >
             </Button>
             <Image
@@ -93,9 +102,16 @@
                 Canvas.Top="145" Height="30" Width="20" HorizontalAlignment="Center" VerticalAlignment="Top"
                 >
             </Image>
+            <Label
+                Content="Samsung calculator"
+                Foreground="#00BC1A"
+                FontSize="20"
+                >
+            </Label>
         </Canvas>
         <Canvas Grid.Row="1" Background="black" >
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="ClearAll"
                 Width="60"
                 Height="60"
                 Canvas.Left="10"
@@ -105,9 +121,11 @@
                 Content="C"
                 Foreground="#FF5335"
                 FontSize="22"
+                Click="ClearAll_Click" 
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="Strength"
                 Width="60"
                 Height="60"
                 Canvas.Left="80"   
@@ -117,9 +135,11 @@
                 Content="x²"
                 FontSize="22"
                 Foreground="#00BC1A"
+                Click="Strength_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="Percent"
                 Width="60"
                 Height="60"
                 Canvas.Left="150"   
@@ -129,9 +149,11 @@
                 Content="%"
                 FontSize="22"
                 Foreground="#00BC1A"
+                Click="Percent_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="Division"
                 Width="60"
                 Height="60"
                 Canvas.Left="220"   
@@ -142,9 +164,11 @@
                 Content="÷"
                 FontSize="30"
                 Foreground="#00BC1A"
+                Click="Division_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="SevenBtn"
                 Width="60"
                 Height="60"
                 Canvas.Left="10"   
@@ -154,9 +178,11 @@
                 Content="7"
                 FontSize="20"
                 Foreground="white"
+                Click="OneBtn_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="EightBtn"
                 Width="60"
                 Height="60"
                 Canvas.Left="80"   
@@ -166,9 +192,11 @@
                 Content="8"
                 FontSize="20"
                 Foreground="white"
+                Click="OneBtn_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="NineBtn"
                 Width="60"
                 Height="60"
                 Canvas.Left="150"   
@@ -178,9 +206,11 @@
                 Content="9"
                 FontSize="20"
                 Foreground="white"
+                Click="OneBtn_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="Multiplication"
                 Width="60"
                 Height="60"
                 Canvas.Left="220"   
@@ -190,9 +220,11 @@
                 Content="X"
                 FontSize="20"
                 Foreground="#00BC1A"
+                Click="Multiplication_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="FourBtn"
                 Width="60"
                 Height="60"
                 Canvas.Left="10"   
@@ -201,10 +233,12 @@
                 BorderThickness="0"
                 Content="4"
                 FontSize="20"
-                Foreground="white"    
+                Foreground="white" 
+                Click="OneBtn_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="FiveBtn"
                 Width="60"
                 Height="60"
                 Canvas.Left="80"   
@@ -214,9 +248,11 @@
                 Content="5"
                 FontSize="20"
                 Foreground="white"
+                Click="OneBtn_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="SixBtn"
                 Width="60"
                 Height="60"
                 Canvas.Left="150"   
@@ -226,9 +262,11 @@
                 Content="6"
                 FontSize="20"
                 Foreground="white"
+                Click="OneBtn_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="Minus"
                 Width="60"
                 Height="60"
                 Canvas.Left="220"   
@@ -238,10 +276,12 @@
                 Padding="2, 2, 2, 8"
                 Content="-"
                 FontSize="34"
-                Foreground="#00BC1A"
+                Foreground="#00BC1A" 
+                Click="Minus_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="OneBtn"
                 Width="60"
                 Height="60"
                 Canvas.Left="10"   
@@ -250,10 +290,12 @@
                 BorderThickness="0"  
                 Content="1"
                 FontSize="20"
-                Foreground="white"    
+                Foreground="white"
+                Click="OneBtn_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="TwoBtn"
                 Width="60"
                 Height="60"
                 Canvas.Left="80"   
@@ -263,9 +305,11 @@
                 Content="2"
                 FontSize="20"
                 Foreground="white"
+                Click="OneBtn_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="ThreeBtn"
                 Width="60"
                 Height="60"
                 Canvas.Left="150"   
@@ -275,9 +319,11 @@
                 Content="3"
                 FontSize="20"
                 Foreground="white"
+                Click="OneBtn_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="Plus"
                 Width="60"
                 Height="60"
                 Canvas.Left="220"   
@@ -288,9 +334,11 @@
                 Content="+"
                 FontSize="30"
                 Foreground="#00BC1A"
+                Click="Plus_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="PlusMinus"
                 Width="60"
                 Height="60"
                 Canvas.Left="10"   
@@ -300,10 +348,12 @@
                 Content="+/-"
                 FontSize="16"
                 FontWeight="Bold"
-                Foreground="white"
+                Foreground="#00BC1A"
+                Click="PlusMinus_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="ZeroBtn"
                 Width="60"
                 Height="60"
                 Canvas.Left="80"   
@@ -313,9 +363,11 @@
                 Content="0"
                 FontSize="20"
                 Foreground="white"
+                Click="ZeroBtn_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="Point"
                 Width="60"
                 Height="60"
                 Canvas.Left="150"   
@@ -325,9 +377,11 @@
                 Content="."
                 FontSize="30"
                 Foreground="white"
+                Click="Point_Click"
                 >
             </Button>
             <Button Style="{DynamicResource ButtonStyle1}"
+                Name="Equals"
                 Width="60"
                 Height="60"
                 Canvas.Left="220"   
@@ -337,7 +391,8 @@
                 Padding="0, 0, 0, 6"
                 Content="="
                 FontSize="30"
-                Foreground="white"
+                Foreground="white" 
+                Click="Equals_Click"    
                 >
             </Button>
         </Canvas>
