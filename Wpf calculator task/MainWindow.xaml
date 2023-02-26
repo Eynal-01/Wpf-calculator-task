@@ -102,12 +102,24 @@
                 Canvas.Top="145" Height="30" Width="20" HorizontalAlignment="Center" VerticalAlignment="Top"
                 >
             </Image>
-            <Label
-                Content="Samsung calculator"
-                Foreground="#00BC1A"
-                FontSize="20"
+            
+            <Image
+                Source="Deleteimage/menu.png" 
+                Height="20" 
+                Width="20"
+                Canvas.Top="15"
+                Canvas.Left="15"
                 >
-            </Label>
+            </Image>
+            <Image
+                Source="Deleteimage/ruler.png"
+                Canvas.Top="150"
+                Canvas.Left="20"
+                Height="20" 
+                Width="20"
+                
+                >
+            </Image>
         </Canvas>
         <Canvas Grid.Row="1" Background="black" >
             <Button Style="{DynamicResource ButtonStyle1}"

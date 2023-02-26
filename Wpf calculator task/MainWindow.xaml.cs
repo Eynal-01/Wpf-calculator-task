@@ -95,18 +95,17 @@ namespace Wpf_calculator_task
         }
         private void Strength_Click(object sender, RoutedEventArgs e)
         {
+            valueSecond = double.Parse(Resulttxtb.Text);
             valueFirst = double.Parse(Resulttxtb.Text);
-            result=Math.Sqrt(valueFirst);
+            result = valueFirst* valueSecond;
             Resulttxtb.Text = result.ToString();
         }
-
         private void Multiplication_Click(object sender, RoutedEventArgs e)
         {
             valueFirst = double.Parse(Resulttxtb.Text);
             Resulttxtb.Clear();
             operators = "*";
         }
-
         private void Division_Click(object sender, RoutedEventArgs e)
         {
             valueFirst = double.Parse(Resulttxtb.Text);
