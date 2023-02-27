@@ -103,5 +103,8 @@
   <ItemGroup>
     <Resource Include="Deleteimage\ruler.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Deleteimage\math.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

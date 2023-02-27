@@ -50,9 +50,13 @@ namespace Wpf_calculator_task
 
         private void Point_Click(object sender, RoutedEventArgs e)
         {
-            if (!Resulttxtb.Text.Contains("."))
+            if (!Resulttxtb.Text.Contains(","))
             {
-                Resulttxtb.Text += ".";
+                Resulttxtb.Text += ",";
+            }
+            else if(Resulttxtb.Text.Length==1)
+            {
+                Resulttxtb.Text = string.Empty;
             }
         }
 
@@ -97,7 +101,7 @@ namespace Wpf_calculator_task
         {
             valueSecond = double.Parse(Resulttxtb.Text);
             valueFirst = double.Parse(Resulttxtb.Text);
-            result = valueFirst* valueSecond;
+            result = valueFirst * valueSecond;
             Resulttxtb.Text = result.ToString();
         }
         private void Multiplication_Click(object sender, RoutedEventArgs e)
@@ -153,7 +157,18 @@ namespace Wpf_calculator_task
 
         private void ClearOne_Click(object sender, RoutedEventArgs e)
         {
-            Resulttxtb.Text = Resulttxtb.Text.Remove(Resulttxtb.Text.Length - 1);
+            if (Resulttxtb.Text.Length >= 1)
+            {
+                Resulttxtb.Text = Resulttxtb.Text.Remove(Resulttxtb.Text.Length - 1);
+            }
+            else if (Resulttxtb.Text.Length == 2 && double.Parse(Resulttxtb.Text)<0)
+            {
+                Resulttxtb.Text = string.Empty;
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

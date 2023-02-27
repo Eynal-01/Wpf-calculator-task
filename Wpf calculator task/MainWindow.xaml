@@ -75,7 +75,7 @@
                 TextAlignment="Right"
                 FontSize="25"
                 Foreground="#302D2D"
-                Margin="10, 10, 10, 10"
+                Margin="10, 6, 10, 10"
                 Background="Black"
                 Padding="0,45, 10, 0"
                 Height="80"
@@ -86,10 +86,10 @@
             </TextBox>
             <Button Style="{DynamicResource ButtonStyle1}"
                 Name="ClearOne"
-                Width="40"
-                Height="40"
+                Width="50"
+                Height="50"
                 Canvas.Left="230"
-                Canvas.Top="135"
+                Canvas.Top="130"
                 Background="Transparent"
                 BorderThickness="0"
                 FontSize="22"
@@ -98,8 +98,10 @@
             </Button>
             <Image
                 Source="DeleteImage/green btn.png"
-                Canvas.Left="239"
-                Canvas.Top="145" Height="30" Width="20" HorizontalAlignment="Center" VerticalAlignment="Top"
+                Canvas.Left="245"
+                Canvas.Top="140" 
+                Height="30" 
+                Width="20" 
                 >
             </Image>
             
@@ -120,6 +122,12 @@
                 
                 >
             </Image>
+            <Image
+                Source="Deleteimage/math.png"
+                Canvas.Top="148"
+                Canvas.Left="50"
+                Height="25"
+                ></Image>
         </Canvas>
         <Canvas Grid.Row="1" Background="black" >
             <Button Style="{DynamicResource ButtonStyle1}"
@@ -386,7 +394,7 @@
                 Canvas.Top="290"
                 Background="#302D2D"
                 BorderThickness="0"
-                Content="."
+                Content=","
                 FontSize="30"
                 Foreground="white"
                 Click="Point_Click"
