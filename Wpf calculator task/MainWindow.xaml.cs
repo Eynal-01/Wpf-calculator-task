@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -34,16 +34,19 @@ namespace Wpf_calculator_task
         private void ClearAll_Click(object sender, RoutedEventArgs e)
         {
             Resulttxtb.Clear();
+            DivLbl.Content = string.Empty;
         }
 
         private void ZeroBtn_Click(object sender, RoutedEventArgs e)
         {
             if (Resulttxtb.Text == "0")
             {
+                DivLbl.Content = string.Empty;
                 Resulttxtb.Text = "0";
             }
             else
             {
+                DivLbl.Content = string.Empty;
                 Resulttxtb.Text += "0";
             }
         }
@@ -54,7 +57,7 @@ namespace Wpf_calculator_task
             {
                 Resulttxtb.Text += ",";
             }
-            else if(Resulttxtb.Text.Length==1)
+            else if (Resulttxtb.Text.Length == 1)
             {
                 Resulttxtb.Text = string.Empty;
             }
@@ -65,10 +68,12 @@ namespace Wpf_calculator_task
             var btn = (Button)sender;
             if (Resulttxtb.Text == "0")
             {
+                DivLbl.Content = string.Empty;
                 Resulttxtb.Text = btn.Content.ToString();
             }
             else
             {
+                DivLbl.Content = string.Empty;
                 Resulttxtb.Text += btn.Content.ToString();
             }
         }
@@ -139,8 +144,16 @@ namespace Wpf_calculator_task
                     break;
                 case "/":
                     valueSecond = double.Parse(Resulttxtb.Text);
-                    result = valueFirst / valueSecond;
-                    Resulttxtb.Text = result.ToString();
+                    if (valueSecond > 0)
+                    {
+                        result = valueFirst / valueSecond;
+                        Resulttxtb.Text = result.ToString();
+                    }
+                    else
+                    {
+                        DivLbl.Content = "Can't divide by zero";
+                        Resulttxtb.Text = string.Empty;
+                    }
                     break;
                 case "*":
                     valueSecond = double.Parse(Resulttxtb.Text);
@@ -161,7 +174,7 @@ namespace Wpf_calculator_task
             {
                 Resulttxtb.Text = Resulttxtb.Text.Remove(Resulttxtb.Text.Length - 1);
             }
-            else if (Resulttxtb.Text.Length == 2 && double.Parse(Resulttxtb.Text)<0)
+            else if (Resulttxtb.Text.Length == 2 && double.Parse(Resulttxtb.Text) < 0)
             {
                 Resulttxtb.Text = string.Empty;
             }

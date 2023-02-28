@@ -81,9 +81,10 @@
                 Height="80"
                 Width="270"
                 BorderThickness="0" 
-                Canvas.Top="40"
+                Canvas.Top="40" 
                 >
             </TextBox>
+            <Label Foreground="Red" Name="DivLbl" Width="120" Height="30" Canvas.Left="100" Canvas.Top="140" ></Label>
             <Button Style="{DynamicResource ButtonStyle1}"
                 Name="ClearOne"
                 Width="50"
