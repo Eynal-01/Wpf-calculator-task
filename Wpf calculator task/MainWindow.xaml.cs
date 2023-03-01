@@ -53,6 +53,10 @@ namespace Wpf_calculator_task
 
         private void Point_Click(object sender, RoutedEventArgs e)
         {
+            if (Resulttxtb.Text.Length == 0)
+            {
+                Resulttxtb.Text = "0";
+            }
             if (!Resulttxtb.Text.Contains(","))
             {
                 Resulttxtb.Text += ",";

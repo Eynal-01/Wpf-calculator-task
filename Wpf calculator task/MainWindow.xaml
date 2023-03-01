@@ -74,7 +74,7 @@
                 Name="Resulttxtb"
                 TextAlignment="Right"
                 FontSize="25"
-                Foreground="#302D2D"
+                Foreground="white"
                 Margin="10, 6, 10, 10"
                 Background="Black"
                 Padding="0,45, 10, 0"
